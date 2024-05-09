@@ -31,9 +31,9 @@ function Signup() {
               password
             });
             localStorage.setItem("tokensignup",response.data.token);
-            alert("todo added");
             navigate("/Dashboard?firstname="+firstname);
         }}>Sign Up</button>
+        <div>have a account? <a href="/signIn">Sign In</a></div>
     </div>
   );
 }

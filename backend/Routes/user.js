@@ -20,7 +20,6 @@ const signupBody = zod.object({
 
 router.post("/signup", async (req, res) => {
     const { success } = signupBody.safeParse(req.body)
-    console.log(req.body);
     if (!success) {
         return res.status(411).json({
             message: "Email already taken / Incorrect inputs"
@@ -60,7 +59,6 @@ router.post("/signup", async (req, res) => {
         userId,
         token:token
     })
-    console.log(token);
 
     res.json({
         message: "User created successfully",
@@ -80,22 +78,24 @@ router.post("/signin",authMiddlewaresignin, async (req, res) => {
             message: "Email already taken / Incorrect inputs"
         })
     }
-    console.log(req.body);
     const user = await User.findOne({
         username: req.body.username,
         password: req.body.password
     });
-    console.log(user);
+    
     if (user) {
         const tokenu = await UserToken.findOne({
             userId: user._id
         });
         const token=tokenu.token
+        const firstName=user.firstName
  
         res.json({
+            message: "Logged in successfully",
+            firstName:firstName,
             token: token
         })
-        console.log(token);
+
         return;
     }
 

@@ -21,12 +21,14 @@ function Signin(){
                         username: email,
                         password
                     });
-                    alert("todo added");
                     localStorage.setItem("tokensignin",response.data.token);
-                    navigate('/dashboard');
+                    localStorage.setItem("firstName",response.data.firstName);
+                    const firstName=localStorage.getItem("firstName");
+                    navigate('/dashboard?firstname='+firstName);
 
-                }}>jjdedjwed</button>
+                }}>Sign In</button>
             </div>
+            <div>Don&apos;t have an account? <a href="/signup">Sign Up</a></div>
         </div>
     )
 }
