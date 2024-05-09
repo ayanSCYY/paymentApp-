@@ -10,7 +10,7 @@ function Dashboard(){
     const [filter, setFilter] = useState('');
 
     useEffect(() => {
-        const token = localStorage.getItem("tokensignup");
+        const token = localStorage.getItem("tokensignup")||localStorage.getItem("tokensignin");
         if (token) {
             axios.get("http://localhost:3000/api/v1/user/bulk?filter=" + filter, {
                 headers: {
