@@ -8,7 +8,7 @@ function Dashboard(){
     const [SearchParams]= useSearchParams();
     const [users, setUsers] = useState([]);
     const [filter, setFilter] = useState('');
-
+    const [balance, setBalance] = useState("");
     useEffect(() => {
         const token = localStorage.getItem("tokensignup")||localStorage.getItem("tokensignin");
         if (token) {
@@ -28,13 +28,24 @@ function Dashboard(){
         }
     }, [filter]);
     
-
-    
-    const firstname=SearchParams.get('firstname');
+   const firstname=SearchParams.get('firstname');
    return (
     <div>
         <div>Payments App</div>
         <div>hello, {firstname} <div>{firstname[0].toUpperCase()}</div> </div>
+        <div><button onClick={async()=>{await axios.get("http://localhost:3000/api/v1/account/balance",
+         {headers:  
+             {"Authorization": "Bearer " + localStorage.getItem('tokensignin')||localStorage.getItem('tokensignup')}}) 
+             .then(response => {
+                setBalance(response.data.balance);
+            })
+            .catch(error => {
+                console.error("Error fetching users:", error);
+            });}
+             
+             }>
+            check balance
+            </button><div>{balance}</div></div>
         <div>Users</div>
         <input type="text" placeholder='search the user....' onChange={e => {setFilter(e.target.value)}} />
         <div> 
@@ -54,9 +65,6 @@ function User({user}) {
         </div>
     )
 }
-
-
-
 
 User.propTypes = {
     user: PropTypes.shape({
