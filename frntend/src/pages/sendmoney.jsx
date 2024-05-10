@@ -20,7 +20,8 @@ function SendMoney(){
                     {to:id,amount},
                     {headers:  {
                         "Authorization": "Bearer " + localStorage.getItem('tokensignin')||localStorage.getItem('tokensignup')
-                    }})
+                    }});
+                    alert("transfer initiated");
                 }}>Initiate transfer</button>
             </div>
 

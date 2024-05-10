@@ -25,6 +25,7 @@ function Signin(){
                     localStorage.setItem("firstName",response.data.firstName);
                     const firstName=localStorage.getItem("firstName");
                     navigate('/dashboard?firstname='+firstName);
+                    
 
                 }}>Sign In</button>
             </div>

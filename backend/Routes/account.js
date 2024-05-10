@@ -1,7 +1,7 @@
 // backend code (account.js)
 const express = require('express');
 const { authMiddleware } = require('../middleware');
-const { Account } = require('../db');
+const { Account,User } = require('../db');
 const { default: mongoose } = require('mongoose');
 
 const router = express.Router();
@@ -18,37 +18,18 @@ router.get("/balance", authMiddleware, async (req, res) => {
 
 router.post("/transfer", authMiddleware, async (req, res) => {
     try {
-        const session = await mongoose.startSession();
-        session.startTransaction();
-        const { amount, to } = req.body;
+         const sess=req.body
+         const  amount=sess.amount;
+         const  to=sess.to;
+         const user1=req.userId;
+         const user2=await User.findOne({_id:to});
+         if(!user2){
+            res.json({mssg:"user not exist"})
+         }
+          await Account.updateOne({ user1 }, { $inc: { amount: -amount } });
+          await Account.updateOne({to},{$inc:{amount:amount}});
+         
 
-        const account = await Account.findOne({ userId: req.userId }).session(session);
-
-        if (!account || account.balance < amount) {
-            await session.abortTransaction();
-            return res.status(400).json({
-                message: "Insufficient balance"
-            });
-        }
-
-        const toAccount = await Account.findOne({ userId: to }).session(session);
-
-        if (!toAccount) {
-            await session.abortTransaction();
-            return res.status(400).json({
-                message: "Invalid account"
-            });
-        }
-
-        await Account.updateOne({ userId: req.userId }, { $inc: { balance: -amount } }).session(session);
-        await Account.updateOne({ userId: to }, { $inc: { balance: amount } }).session(session);
-
-        await session.commitTransaction();
-        session.endSession();
-
-        res.json({
-            message: "Transfer successful"
-        });
     } catch (error) {
         console.error("Error occurred during transfer:", error);
         res.status(500).json({ message: "Internal Server Error" });

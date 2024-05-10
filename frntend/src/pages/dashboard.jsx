@@ -9,6 +9,7 @@ function Dashboard(){
     const [users, setUsers] = useState([]);
     const [filter, setFilter] = useState('');
     const [balance, setBalance] = useState("");
+    const navigate=useNavigate();
     useEffect(() => {
         const token = localStorage.getItem("tokensignup")||localStorage.getItem("tokensignin");
         if (token) {
@@ -51,6 +52,12 @@ function Dashboard(){
         <div> 
             {users.map(user => (<User key = {user._id} user={user} />))}
         </div>
+        <button onClick={
+            ()=>{
+                localStorage.removeItem("tokensignin")||localStorage.removeItem("tokensignup");
+                localStorage.removeItem("firstName"); 
+                navigate('/');
+        }}>logout</button>
     </div>
    )    
 }
