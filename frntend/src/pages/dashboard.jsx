@@ -56,8 +56,7 @@ function Dashboard() {
                 {users.map(user => (<User key={user._id} user={user} />))}
             </div>
             <button onClick={() => {
-                localStorage.removeItem("tokensignin") || localStorage.removeItem("tokensignup");
-                localStorage.removeItem("firstName");
+                localStorage.clear();
                 navigate('/');
             }}>Logout</button>
         </div>

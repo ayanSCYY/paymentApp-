@@ -1,4 +1,4 @@
-import { useSearchParams } from 'react-router-dom';
+import { useSearchParams,useNavigate} from 'react-router-dom';
 import { useState } from 'react';
 import axios from 'axios';
 
@@ -7,10 +7,10 @@ function SendMoney() {
     const [searchparams] = useSearchParams();
     const firstname = searchparams.get('firstname');
     const id = searchparams.get('id');
+    const navigate = useNavigate();
 
     return (
         <div>
-            <div>Send Money</div>
             <div>
                 <div>{firstname[0].toUpperCase()}</div>
                 <div>{firstname}</div>
@@ -30,7 +30,10 @@ function SendMoney() {
                         }}
                     );
                     alert("Transfer initiated");
-                }}>Initiate transfer</button>
+                }}>Send</button>
+            </div>
+            <div>
+            <button onClick={()=>{localStorage.clear();navigate("/")}}>Logout</button>
             </div>
         </div>
     );
