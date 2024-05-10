@@ -5,7 +5,6 @@ const { UserToken } = require("./db");
 
 const authMiddleware = (req, res, next) => {
     const authHeader = req.headers.authorization;
-    console.log(authHeader);
 
     if (!authHeader || !authHeader.startsWith('Bearer ')) {
         return res.status(403).json({});
@@ -25,6 +24,7 @@ const authMiddleware = (req, res, next) => {
 };
 const authMiddlewaresignin=async (req,res,next)=>{
     const user=req.body;
+   
     const usert=await User.findOne({
         username:user.username,
         password:user.password

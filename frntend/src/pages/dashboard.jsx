@@ -1,11 +1,10 @@
-import { useSearchParams } from 'react-router-dom';
+
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 function Dashboard() {
-    const [SearchParams] = useSearchParams();
     const [users, setUsers] = useState([]);
     const [filter, setFilter] = useState('');
     const [balance, setBalance] = useState("");
@@ -30,8 +29,7 @@ function Dashboard() {
         }
     }, [filter]);
 
-    const firstname = SearchParams.get('firstname');
-
+    const firstname = localStorage.getItem("firstName");
     return (
         <div>
             <div>Payments App</div>

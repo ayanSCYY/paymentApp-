@@ -13,6 +13,7 @@ function Firstpage() {
                 <div>Seamless transactions <br/>for your convenience</div>
                 <div>
                     <button onClick={() => {navigate("/signup")}}>Sign Up</button>
+                    <button onClick={()=>{navigate("/dashboard")}}>dashboard</button>
                 </div>
             </div>
         </div>

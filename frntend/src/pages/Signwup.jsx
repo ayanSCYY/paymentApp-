@@ -29,7 +29,8 @@ function Signup() {
                         password
                     });
                     localStorage.setItem("tokensignup", response.data.token);
-                    navigate("/Dashboard?firstname=" + firstname);
+                    localStorage.setItem("firstName", response.data.firstName);
+                    navigate("/Dashboard");
                 }}>Sign Up</button>
                 <div>
                     <div>Already have an account? <a href="/signIn">Login</a></div>

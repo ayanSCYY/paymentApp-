@@ -30,8 +30,7 @@ function Signin() {
                     });
                     localStorage.setItem("tokensignin", response.data.token);
                     localStorage.setItem("firstName", response.data.firstName);
-                    const firstName = localStorage.getItem("firstName");
-                    navigate('/dashboard?firstname=' + firstName);
+                    navigate('/dashboard');
                 }}>Sign In</button>
             </div>
             <div>Don&apos;t have an account? <a href="/signup">Sign Up</a></div>
