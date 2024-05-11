@@ -19,7 +19,7 @@ function Signin() {
                 />
                 <div>Password</div>
                 <input 
-                    type="password" 
+                    
                     onChange={(e) => setPassword(e.target.value)} 
                 />
                 <br/>

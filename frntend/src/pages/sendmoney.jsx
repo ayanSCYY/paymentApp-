@@ -21,12 +21,12 @@ function SendMoney() {
                     onChange={e => {setAmount(e.target.value)}} 
                 />
                 <br />
-                <button onClick={async () => {
-                    await axios.post(
+                <button onClick={() => {
+                     axios.post(
                         'http://localhost:3000/api/v1/account/transfer',
                         { to: id, amount },
                         { headers: { "Authorization": "Bearer " + 
-                            (localStorage.getItem('tokensignin') || localStorage.getItem('tokensignup'))
+                            localStorage.getItem('tokensignin') || localStorage.getItem('tokensignup')
                         }}
                     );
                     alert("Transfer initiated");
