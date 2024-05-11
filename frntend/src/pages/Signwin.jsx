@@ -23,7 +23,7 @@ function Signin() {
                     onChange={(e) => setPassword(e.target.value)} 
                 />
                 <br/>
-                <button onClick={async () => {
+                <button className="bg-red-500" onClick={async () => {
                     const response = await axios.post("http://localhost:3000/api/v1/user/signin", {
                         username: email,
                         password
