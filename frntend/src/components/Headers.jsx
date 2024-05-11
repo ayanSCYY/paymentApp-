@@ -4,7 +4,7 @@ function Header() {
     const navigate = useNavigate();
     
     return (
-    <div className="h-16 w-1512 "> 
+    <div className="h-16 w-1512 bg-white/[0.7] "> 
         <div className="flex justify-between">
            <div className="flex"> 
              <div className="h-6 w-6 b border-4 border-t-figma-bt border-r-figma-br border-b-figma-bl border-l-figma-bb ml-16 mt-4 "></div>
