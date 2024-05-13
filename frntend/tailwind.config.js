@@ -16,7 +16,10 @@ export default {
         'figma-t':'#8ACBC3',
         'white':'#ffffff',
         'bordersu':'#310D7E',
-        'button2':'#9468F1'
+        'button2':'#9468F1',
+        'button3':'#8ACBC3',
+        'button4':'#173476'
+        
       },
       margin:{
         '88':'22rem',
@@ -24,6 +27,9 @@ export default {
         '100':'26rem',
         '104':'28rem'
 
+      },
+      width:{
+        '58':'14.5rem',
       },
       backgroundImage: {
         'signuppg':"url('/src/assets/signuppg.png')",

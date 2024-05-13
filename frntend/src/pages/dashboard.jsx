@@ -1,86 +1,56 @@
 
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
-import PropTypes from 'prop-types';
 
-function Dashboard() {
-    const [users, setUsers] = useState([]);
-    const [filter, setFilter] = useState('');
+import Dashboard from '../components/dashboard';
+
+function Dashboard1() {
     const [balance, setBalance] = useState("");
-    const navigate = useNavigate();
+    
 
-    useEffect(() => {
-        const token = localStorage.getItem("tokensignup") || localStorage.getItem("tokensignin");
-        if (token) {
-            axios.get("http://localhost:3000/api/v1/user/bulk?filter=" + filter, {
-                headers: {
-                    "Authorization": "Bearer " + token
-                }
-            })
-                .then(response => {
-                    setUsers(response.data.user);
-                })
-                .catch(error => {
-                    console.error("Error fetching users:", error);
-                });
-        } else {
-            console.error("Authorization token is missing.");
-        }
-    }, [filter]);
+   
+
+
 
     const firstname = localStorage.getItem("firstName");
     return (
         <div>
-            <div>Payments App</div>
-            <div>hello, {firstname} <div>{firstname[0].toUpperCase()}</div> </div>
-            <div>
-                <button onClick={async () => {
-                    await axios.get("http://localhost:3000/api/v1/account/balance", {
-                        headers: { "Authorization": "Bearer " + localStorage.getItem('tokensignin') || localStorage.getItem('tokensignup') }
-                    })
+           
+            <div className='flex flex-row h-screen'>
+                 <Dashboard firstname={firstname}/>
+                <div className='basis-4/5 m-7 '>
+                    <div className='flex justify-start'>
+                      <button className='m-4 h-16 m-7 w-40 rounded-2xl bg-gradient-to-r from-figma-hc/[0.74] from-20% to-button4/[0.6] to-92% transform transition-transform hover:scale-150' onMouseEnter={async () => {
+                        await axios.get("http://localhost:3000/api/v1/account/balance", {
+                        headers: { "Authorization": "Bearer " + (localStorage.getItem('tokensignin') || localStorage.getItem('tokensignup')) }
+                        })
                         .then(response => {
                             setBalance(response.data.balance);
                         })
                         .catch(error => {
                             console.error("Error fetching users:", error);
                         });
-                }}>
-                    Check balance
-                </button>
-                <div>{balance}</div>
-            </div>
-            <div>Users</div>
-            <input type="text" placeholder='Search the user....' onChange={e => { setFilter(e.target.value) }} />
-            <div>
-                {users.map(user => (<User key={user._id} user={user} />))}
-            </div>
-            <button onClick={() => {
-                localStorage.clear();
-                navigate('/');
-            }}>Logout</button>
+                      }} onMouseLeave={() => { setBalance("") }}>
+                      <span className='flex flex-col absolute inset-0  justify-center items-center'>
+                        <div className='font-bold text-white '>
+                        balance
+                        </div>
+                        <div className='text-white/[0.6] font-light '> 
+                          <div className='flex'>
+                          <svg  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M15 8.25H9m6 3H9m3 6-3-3h1.5a3 3 0 1 0 0-6M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                          </svg>
+                          {balance}
+                        </div>
+                        </div>
+                       </span>
+                      </button>
+                    </div>
+                </div>
+            </div>     
         </div>
     );
 }
 
-function User({ user }) {
-    const navigate = useNavigate();
 
-    return (
-        <div key={user._id}>
-            <div>{user.firstName[0].toUpperCase()}</div>
-            <div>{user.firstName} {user.lastName}</div>
-            <button onClick={() => { navigate("/send?id=" + user._id + "&firstname=" + user.firstName) }}>Send money</button>
-        </div>
-    );
-}
-
-User.propTypes = {
-    user: PropTypes.shape({
-        firstName: PropTypes.string.isRequired,
-        lastName: PropTypes.string.isRequired,
-        _id: PropTypes.string.isRequired,
-    }).isRequired,
-};
-
-export default Dashboard;
+export default Dashboard1;
