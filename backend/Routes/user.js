@@ -3,7 +3,7 @@ const express = require('express');
 
 const router = express.Router();
 const zod = require("zod");
-const { User } = require("../db");
+const { User,Debt } = require("../db");
 const { Account } = require("../db");
 const { UserToken}= require("../db");
 const jwt = require("jsonwebtoken");
@@ -46,10 +46,19 @@ router.post("/signup", async (req, res) => {
     const userId = user._id;
     const balance1=1+Math.random()*10000
     const balance=parseFloat(balance1.toFixed(2))
+    const debt1=1+Math.random()*10000
+    const debt=parseFloat(debt1.toFixed(2))
+
+
 
     await Account.create({
         userId,
         balance: balance
+    })
+    
+    await Debt.create({
+        userId,
+        debtamount: debt
     })
 
     const token = jwt.sign({

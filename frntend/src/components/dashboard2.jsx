@@ -3,8 +3,7 @@ import propTypes from 'prop-types';
 function Dashboard2({firstname}){
     const navigate=useNavigate()
     return (
-<div className=" ">
-    <div className=' overflow-y-auto static basis-1/5 bg-figma-hc/[0.8] h-screen '>
+    <div className=' basis-1/5 w-full bg-[#08235A] h-screen '>
       <div className='flex flex-col'>
         <div className="h-24 w-50"> 
           <div className="flex justify-between">
@@ -16,8 +15,8 @@ function Dashboard2({firstname}){
             </div>  
           </div> 
         </div>
-            <button className=' w-48 h-12 ml-4 mr-4 mb-2 mt-4 text-base text-white/[0.5] font-extralight hover:bg-figma-hc/[0.24] hover:text-white hover:rounded-lg' onClick={() => navigate('/dashboard')}>Dashboard</button>
-            <div className='text-center bg-figma-hc/[0.74] text-white  w-48 h-12 ml-4 mr-4 mb-4 text-base font-normal rounded-lg hover:cursor-pointer'><div className='mt-2.5 mr-4 '>transaction</div></div>
+            <button className=' w-48 h-12 ml-4 mr-4 mb-2 mt-4 text-base text-white/[0.5] font-extralight hover:bg-figma-hc/[0.24] hover:text-white hover:rounded-lg ' onClick={() => navigate('/dashboard')}>Dashboard</button>
+            <div className='text-center bg-figma-hc/[0.74] text-white  w-48 h-12 ml-4 mr-4 mb-4 text-base font-normal rounded-lg hover:cursor-pointer'><div className='mt-2.5 mr-4 ml-2 '>transaction</div></div>
             
         </div>
         <div className='fixed bottom-0 text-center'>
@@ -31,8 +30,7 @@ function Dashboard2({firstname}){
                <div>Logout</div>
             </button>
       </div> 
-    </div>
-</div>    
+    </div>    
     )
 }
 

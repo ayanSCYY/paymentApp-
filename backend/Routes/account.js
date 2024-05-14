@@ -1,7 +1,7 @@
 // backend code (account.js)
 const express = require("express");
 const { authMiddleware } = require("../middleware");
-const { Account, User } = require("../db");
+const { Account, User,Debt } = require("../db");
 const { default: mongoose } = require("mongoose");
 
 const router = express.Router();
@@ -13,6 +13,16 @@ router.get("/balance", authMiddleware, async (req, res) => {
 
   res.json({
     balance: account.balance
+  });
+});
+
+router.get("/debt", authMiddleware, async (req, res) => {
+  const debt = await Debt.findOne({
+    userId: req.userId
+  });
+
+  res.json({
+    debt: debt.debtamount
   });
 });
 

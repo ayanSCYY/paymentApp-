@@ -3,7 +3,7 @@ import propTypes from 'prop-types';
 function Dashboard({firstname}){
     const navigate=useNavigate()
     return (
-    <div className='overflow-y-auto static basis-1/5 bg-figma-hc/[0.8] h-screen '>
+    <div className=' basis-1/5 w-full bg-[#08235A] h-screen '>
       <div className='flex flex-col'>
         <div className="h-24 w-50"> 
           <div className="flex justify-between">

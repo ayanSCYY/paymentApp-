@@ -24,6 +24,18 @@ const accountSchema = new mongoose.Schema({
     }
 });
 
+const debtSchema = new mongoose.Schema({
+    userId: {
+        type: mongoose.Schema.Types.ObjectId, // Reference to User model
+        ref: 'User',
+        required: true
+    },
+    debtamount: {
+        type: Number,
+        required: true
+    }
+});
+
 const UserTokenSchema= new mongoose.Schema({
     userId: {
         type: mongoose.Schema.Types.ObjectId,
@@ -36,10 +48,12 @@ const UserTokenSchema= new mongoose.Schema({
 
 const User = mongoose.model('User',userSchema);
 const Account=mongoose.model("Account",accountSchema);
+const Debt=mongoose.model("Debt",debtSchema);
 const UserToken=mongoose.model("UserToken",UserTokenSchema);
 
  module.exports ={
     User,
     Account,
+    Debt,
     UserToken
  };
