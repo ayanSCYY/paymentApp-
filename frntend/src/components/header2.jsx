@@ -16,8 +16,8 @@ function Header2() {
             </div>
             </div>
             <div>
-                <button className="text-base text-[#08235A]  font-merri font-bold h-8 w-16 text-center  mt-3 mr-3 transition ease-in-out delay-25 hover:-translate-y-1 hover:scale-110 hover:text-black-200 duration-1000" onClick={() => {navigate("/")}}>Login</button>
-                <button className="text-base text-white bg-[#08235A] font-merri font-bold h-10 w-20 text-center mt-3 mr-3" onClick={() => {navigate("/signup")}}>signup</button>
+                <button className="max-myyy:hidden text-base text-[#08235A]  font-merri font-bold h-8 w-16 text-center  mt-3 mr-0 transition ease-in-out delay-25 hover:-translate-y-1 hover:scale-110 hover:text-black-200 duration-1000" onClick={() => {navigate("/")}}>Login</button>
+                <button className="max-myyy:hidden text-base text-white bg-[#08235A] font-merri font-bold h-10 w-20 text-center mt-3 mr-3" onClick={() => {navigate("/signup")}}>signup</button>
             </div>
         </div>
     </div>  

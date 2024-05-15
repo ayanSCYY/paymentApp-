@@ -15,11 +15,11 @@ function Dashboard1() {
     const firstname = localStorage.getItem("firstName");
     return (
         
-            <div className='flex flex-row h-screen'>
-                 <Dashboard firstname={firstname}/>
-                <div className='basis-4/5'>
-                    <div className='flex justify-center'>
-                      <button className='m-4 h-32 m-7 mt-16 mr-10 w-64 rounded-2xl bg-gradient-to-r from-figma-hc/[0.95] from-20% to-button4/[0.6] to-92% transform transition-transform hover:scale-150' onMouseEnter={async () => {
+            <div className=' my4:grid my4:grid-cols-5'>
+                <Dashboard firstname={firstname}/>
+                <div className='col-span-4  '>
+                    <div className= ' max-my:flex-col gap-20 my3:grid my3:grid-cols-6 my3:ml-[8%] my3:gap-10 flex justify-center items-center '>
+                      <button className='col-span-2 h-32 my3:mr-24 mt-16 w-64 rounded-2xl bg-gradient-to-r from-figma-hc/[0.95] from-20% to-button4/[0.6] to-92% transform transition-transform hover:scale-150' onMouseEnter={async () => {
                         await axios.get("http://localhost:3000/api/v1/account/balance", {
                         headers: { "Authorization": "Bearer " + (localStorage.getItem('tokensignin') || localStorage.getItem('tokensignup')) }
                         })
@@ -44,7 +44,7 @@ function Dashboard1() {
                         </div>
                        </span>
                       </button>
-                      <button className='m-4 h-32 m-7 mt-16 w-64 rounded-2xl bg-gradient-to-r from-figma-hc/[0.95] from-20% to-button4/[0.6] to-92% transform transition-transform hover:scale-150' onMouseEnter={async () => {
+                      <button className='col-span-2 h-32 my3:ml-8 mt-16 w-64 rounded-2xl bg-gradient-to-r from-figma-hc/[0.95] from-20% to-button4/[0.6] to-92% transform transition-transform hover:scale-150' onMouseEnter={async () => {
                         await axios.get("http://localhost:3000/api/v1/account/debt", {
                         headers: { "Authorization": "Bearer " + (localStorage.getItem('tokensignin') || localStorage.getItem('tokensignup')) }
                         })

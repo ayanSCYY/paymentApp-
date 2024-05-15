@@ -4,8 +4,8 @@ function Header1() {
     const navigate = useNavigate();
     
     return (
-    <div className="h-20 w-1512 "> 
-        <div className="flex justify-between">
+    <div className="h-20 w-full "> 
+        <div className="flex flex justify-between ">
             <div className="">
              <div className="flex items-center text-white font-bold font-merri text-3xl ml-20 mt-3 ">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
@@ -16,8 +16,8 @@ function Header1() {
             </div>
             </div>
             <div>
-                <button className="text-base text-[#08235A] bg-white font-merri font-bold h-10 w-20 text-center  mt-3 mr-3" onClick={() => {navigate("/signin")}}>Login</button>
-                <button className="text-base text-white font-merri font-bold h-8 w-16 text-center rounded-lg mt-3 mr-3 transition ease-in-out delay-25 hover:-translate-y-1 hover:scale-105 hover:text-black-300 duration-1000" onClick={() => {navigate("/signup")}}>signup</button>
+                <button className="max-myyy:hidden text-base text-[#08235A] bg-white font-merri font-bold h-10 w-20 text-center mt-3 mr-0" onClick={() => {navigate("/")}}>Login</button>
+                <button className="max-myyy:hidden text-base text-white font-merri font-bold h-8 w-16 text-center rounded-lg mt-3 mr-3 transition ease-in-out delay-25 hover:-translate-y-1 hover:scale-105 hover:text-black-300 duration-1000"  onClick={() => {navigate("/signup")}}>signup</button>
             </div>
         </div>
     </div>  

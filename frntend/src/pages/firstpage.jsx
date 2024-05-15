@@ -10,13 +10,13 @@ function Firstpage() {
     
     return (
         
-    <div className="bg-[#08235A]">
+    <div className="bg-[#08235A] h-screen w-screen ">
         <div>
             <Header1 />
-            <div className="flex justify-between items-center">
-                <div className='basis-1/2 flex justify-start bg-cover h-screen'>
-                    <div className='shadow-3xl  flex w-100 h-100 ml-28 mt-10'>
-                       <div className=' w-full h-full flex flex-col pl-16 pt-12'>
+            <div className="grid grid-cols-1 my:grid my:grid-cols-2">
+                <div className=' flex justify-center items-center '>
+                    <div className='shadow-3xl  flex w-80 md:w-100 h-100  '>
+                       <div className=' w-70 max-sm:h-6 md:w-full md:h-full flex flex-col pl-16 pt-12'>
                             <div className="text-3xl text-white font-bold mb-8 mt-4 ">Login</div>
                             <div className="pr-16">
                                 <div className="text-white mb-2 text-sm font-semibold">username</div>
@@ -62,7 +62,7 @@ function Firstpage() {
 
                     </div>
                 </div>
-                <div className="shadow-3xl rounded-2xl basis-1/2 h-100 w-100 bg-sgn bg-cover mr-22 mb-20 item center">
+                <div className="max-my:hidden flex justify-center items-center my:shadow-3xl my:rounded-2xl my:h-100 my:max-xl:w-100 bg-sgn bg-cover mr-22 xl:w-124 ">
 
                 </div>
             </div>

@@ -57,6 +57,7 @@ export default {
        'signinbg': "url('/src/assets/signinbg.jpg')",
        'signin':`url('/src/assets/signin.jpg')`,
        'sgn':`url('/src/assets/sgn.jpg')`,
+       'sigu':`url('/src/assets/sigu.png')`,
 
       },
       borderWidth:{
@@ -65,8 +66,14 @@ export default {
       },
       boxShadow: {
         '3xl': '0 35px 60px -15px rgba(0, 0, 0, 0.3)',
-      }
+      },
+      screens: {
+        'my':'1000px',
+        'myy':'1124px',
+        'myyy':'520px',
+        'my3':'1200px',
+        'my4':'730px'
     },
   },
   plugins: [],
-}
+}}

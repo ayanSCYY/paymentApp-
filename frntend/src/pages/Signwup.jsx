@@ -13,8 +13,9 @@ function Signup() {
 return (
 <div>
     <Header2/>
-    <div className='flex  '>
-        <div className='shadow-3xl flex flex-col h-84 w-72 items-center justify-center ml-104 mt-10 mb-10 bg-white/[0.08]'>
+    <div className=' grid grid-cols-1 my:grid my:grid-cols-1   '>
+        <div className='flex justify-center items-center'>
+        <div className='shadow-3xl flex flex-col  h-84 w-72 items-center justify-center  bg-white/[0.08]'>
             <div className='text-2xl text-center  font-bold text-[#08235A]'>
                 Sign Up
             </div>
@@ -45,6 +46,10 @@ return (
                 </div>
             </div>
         </div>
+        </div> 
+      {/*   <div className="max-my:hidden flex justify-center items-center my:shadow-3xl my:rounded-2xl my:h-100 my:max-xl:w-100 bg-sigu bg-cover mr-22 xl:w-124 ">
+        
+        </div> */}
     </div>
 </div>
     );
