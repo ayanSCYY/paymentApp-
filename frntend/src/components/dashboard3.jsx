@@ -6,7 +6,7 @@ function Dashboard({firstname}){
     const [clickcount,setClickcount]=useState(0);
     return (
       <div className=" col-span-1 flex justify-between max-my4:items-center">
-        <div className='  w-screen my4:rounded-non bg-[#08235A]  my4:w-64  my4:h-screen '>
+        <div className=' w-screen my4:rounded-non bg-[#08235A]  my4:w-64  my4:h-screen '>
           <div className='flex  my4:flex-col '>
             <div className="w-full my4:h-24 my4:w-50">
               <div className='max-my4:grid max-my4:grid-cols-2 my4:flex  max-my4:content-between  my4:mr-10  '>
@@ -17,8 +17,9 @@ function Dashboard({firstname}){
               </div>
             </div>
             <div className="max-my4:hidden flex my4:flex-col justify-center items-center">
-              <div className='text-center text-white  my4:w-48 my4:h-12 ml-[15%] mr-4 mt-2 text-base font-normal hover:cursor-pointer'><div className='mt-2.5 mr-4 '>Dashboard</div></div>
-              <button className=' w-48 h-12 ml-4 mr-4 mt-2 mb-4 text-base text-white/[0.5] font-extralight hover:text-white hover:rounded-lg' onClick={() => navigate('/transaction')}>Transactions</button>
+                            <button className=' w-48 h-12 ml-4 mr-4 mt-2 mb-4 text-base text-white/[0.5] font-extralight hover:text-white hover:rounded-lg' onClick={() => navigate('/dashboard')}>Dashboard</button>
+                            <div className='text-center text-white  my4:w-48 my4:h-12 ml-[15%] mr-4 mt-2 text-base font-normal hover:cursor-pointer'><div className='mt-2.5 mr-4 '>Transaction</div></div>
+
             </div>
           </div>
           <div className='max-my4:hidden flex justify-center items-center my4:fixed my4:bottom-0 ml-[2%] mb-[1%] text-center'>
@@ -44,7 +45,7 @@ const Menu=({clickcount,setClickcount})=>{
     return (
     
     <div className="z-1 flex flex-col relative  ">
-      <div className="w-[40%] ml-[60%] flex flex-col bg-[#08235A]/[0.5] fixed shadow-2xl rounded-xl">
+      <div className="w-[40%] ml-[60%] flex flex-col bg-[#08235A]/[0.05] fixed shadow-2xl rounded-xl">
         <button className=" h-[3.5rem] text-center text-[#08235A] text-base hover:bg-[#08235A]/[0.3]  border-b-1  border-[#08235A]/[0.5]"  onClick={()=>{navigate('/dashboard')}}>dashboard</button>
         <button className="  h-[3.5rem] text-center text-[#08235A] text-base hover:bg-[#08235A]/[0.3]  border-b-1  border-[#08235A]/[0.5]" onClick={()=>{navigate('/transaction')}}>transaction</button>
         <button className="  h-[3.5rem] text-center text-[#08235A] text-base hover:bg-[#08235A]/[0.3]   border-[#08235A]/[0.5]"onClick={()=>{localStorage.clear();navigate('/')}}>Logout</button>

@@ -72,7 +72,8 @@ export default {
         'myy':'1124px',
         'myyy':'520px',
         'my3':'1200px',
-        'my4':'730px'
+        'my4':'730px',
+        'my5':'520px'
     },
   },
   plugins: [],

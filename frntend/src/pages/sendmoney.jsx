@@ -1,7 +1,7 @@
 import { useSearchParams} from 'react-router-dom';
 import { useState } from 'react';
 import axios from 'axios';
-import Dashboard2 from '../components/dashboard2';
+import Dashboard3 from '../components/dashboard3';
 
 function SendMoney() {
     const [amount, setAmount] = useState(0);
@@ -13,11 +13,11 @@ function SendMoney() {
     
     return (
         <div>
-            <div className='flex flex-row h-screen'>
-                <Dashboard2 firstname={firstname}/>
-                <div className='flex flex-col basis-4/5 m-5'>
+            <div className='my4:grid my4:grid-cols-5 h-screen'>
+                <Dashboard3 firstname={firstname}/>
+                <div className='col-span-4 flex flex-col  ml-[10%] mt-[5%]'>
                     <div className='flex ml-6 mb-3 '>
-                        <div className='w-10 h-10 m-7 text-white rounded-full text-center text-2xl font-normal bg-figma-hc/[0.74]  '>{firstname2[0].toUpperCase()}</div>
+                        <div className='w-10 h-10 m-7 text-white rounded-full text-center text-2xl font-normal bg-[#08235A]  '>{firstname2[0].toUpperCase()}</div>
                         <div className='mt-7 text-2xl'>{firstname2}</div>
                     </div>
                     <div className='ml-7'>
@@ -32,7 +32,7 @@ function SendMoney() {
                             placeholder='Enter amount' 
                             onChange={e => {setAmount(e.target.value)}} 
                         />
-                        <button className='ml-3 bg-figma-hc/[0.74] text-white font-light rounded-lg h-10 w-20' onClick={() => {
+                        <button className='ml-3 max-[386px]:ml-[12%] max-[386px]:mt-[5%]  bg-[#08235A] text-white font-light rounded-lg h-10 w-20 hover:bg-[#4b69a6] /[0.1]' onClick={() => {
                          axios.post(
                             'http://localhost:3000/api/v1/account/transfer',
                             { to: id, amount },
