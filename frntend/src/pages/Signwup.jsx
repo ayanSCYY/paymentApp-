@@ -13,7 +13,7 @@ function Signup() {
 return (
 <div>
     <Header2/>
-    <div className=' grid grid-cols-1 my:grid my:grid-cols-1   '>
+    <div className='top-[50%] grid grid-cols-1 my:grid my:grid-cols-1   '>
         <div className='flex justify-center items-center'>
         <div className='shadow-3xl flex flex-col  h-84 w-72 items-center justify-center  bg-white/[0.08]'>
             <div className='text-2xl text-center  font-bold text-[#08235A]'>
