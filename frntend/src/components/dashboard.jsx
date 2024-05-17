@@ -45,9 +45,9 @@ const Menu=({clickcount,setClickcount})=>{
     
     <div className="z-1 flex flex-col relative  ">
       <div className="w-[40%] ml-[60%] flex flex-col bg-[#08235A]/[0.5] fixed shadow-2xl rounded-xl">
-        <button className=" h-[3.5rem] text-center text-[#08235A] text-base hover:bg-[#08235A]/[0.3]  border-b-1  border-[#08235A]/[0.5]"  onClick={()=>{navigate('/dashboard')}}>dashboard</button>
-        <button className="  h-[3.5rem] text-center text-[#08235A] text-base hover:bg-[#08235A]/[0.3]  border-b-1  border-[#08235A]/[0.5]" onClick={()=>{navigate('/transaction')}}>transaction</button>
-        <button className="  h-[3.5rem] text-center text-[#08235A] text-base hover:bg-[#08235A]/[0.3]   border-[#08235A]/[0.5]"onClick={()=>{localStorage.clear();navigate('/')}}>Logout</button>
+        <button className=" h-[3.5rem] text-center text-[#08235A] text-base hover:bg-[#08235A]/[0.3]  border-b-1  border-[#08235A]/[0.5]"  onClick={()=>{navigate('/dashboard'); setClickcount(0)}}>dashboard</button>
+        <button className="  h-[3.5rem] text-center text-[#08235A] text-base hover:bg-[#08235A]/[0.3]  border-b-1  border-[#08235A]/[0.5]" onClick={()=>{navigate('/transaction');setClickcount(0)}}>transaction</button>
+        <button className="  h-[3.5rem] text-center text-[#08235A] text-base hover:bg-[#08235A]/[0.3]   border-[#08235A]/[0.5]"onClick={()=>{localStorage.clear();navigate('/');setClickcount(0)}}>Logout</button>
       </div>
     </div>
     )
