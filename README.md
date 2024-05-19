@@ -10,8 +10,8 @@
 </ul>
 
 #FILE STRUCTURE
-<
-##paymentApp-
+
+<##paymentApp-
 |
 |-backend
 |  |-Routes //contains routes for different functions.
