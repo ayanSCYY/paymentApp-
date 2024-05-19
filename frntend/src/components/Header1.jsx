@@ -5,7 +5,7 @@ function Header1() {
     
     return (
     <div className="h-20 w-full "> 
-        <div className="flex flex justify-between ">
+        <div className="flex justify-between ">
             <div className="">
              <div className="flex items-center text-white font-bold font-merri text-3xl ml-20 mt-3 ">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">

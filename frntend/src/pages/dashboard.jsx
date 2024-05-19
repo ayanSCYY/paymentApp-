@@ -8,10 +8,6 @@ function Dashboard1() {
     const [balance, setBalance] = useState("");
     const [debt, setDebt] = useState("");
 
-   
-
-
-
     const firstname = localStorage.getItem("firstName");
     return (
         
