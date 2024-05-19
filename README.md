@@ -1,48 +1,66 @@
-##HAPPY PAY
-##Basic payment app where multiple users can come and transact their money.
+# Happy Pay
 
-#Pre-Requisites
-<ul>
-  <li>nodeJS</li>
-  <li>ReactJS</li>
-  <li>mongo</li>
-  <li>git</li>
-</ul>
+#### Basic payment app where multiple users can come and transact their money.
 
-#FILE STRUCTURE
+### Pre-Requisites
+- **NodeJS**
+- **ReactJS**
+- **MongoDB**
+- **Git**
 
-<##paymentApp-
+### Installation and setup
+
+- **Cloning the project.**
+
+```
+$ git clone https://github.com/ayanSCYY/paymentApp-
+
+```
+
+- **Installation guide for running project.**
+```
+$cd backend
+$npm install
+$cd ..
+$cd frntend
+$npm install
+$npm run dev
+
+```
+
+
+### File Structure
+
+```
+paymentApp/
 |
-|-backend
-|  |-Routes //contains routes for different functions.
-|  |   |-account.js //users account-related work (transaction, balance of unique user).
-|  |   |-index.js //sets up a router for handling multiple routes.
-|  |   |-user.js //user-related work like signup, login, search function, updating data.
+|- backend/
+|  |- Routes/             // Contains routes for different functions.
+|  |  |- account.js       // Users account-related work (transactions, balance of unique user).
+|  |  |- index.js         // Sets up a router for handling multiple routes.
+|  |  |- user.js          // User-related work like signup, login, search function, updating data.
 |  |
-|  |-config.js
-|  |-db.js //Contains schemas for various databases
-|  |-middleware.js //Authentication based work..
+|  |- config.js           // Configuration file for environment variables and settings.
+|  |- db.js               // Contains schemas for various databases.
+|  |- middleware.js       // Authentication based work.
 |
-|-frntend
-   |-src
-      |-components 
-      |  |-dashboard.JSX,dashboard2,dashboard3 //code for dashboard for multiple routes.
-      |  |-header1,header2 //code for a header in the login page, signup page routes.
-      |
-      |-pages
-      |  |-firstpage.jsx 
-      |  |-signwup.jsx
-      |  |-transaction.jsx //code for showing info about all the users.
-      |  |-dashboard.jsx 
-      |  |-sendmoney.jsx //code for page where users can transact their capital.
-      |
-      |-App.jsx //code for routing system between various pages via react application.
+|- frontend/
+|  |- src/
+|     |- components/
+|     |  |- dashboard.JSX  // Code for the dashboard for multiple routes.
+|     |  |- dashboard2.JSX
+|     |  |- dashboard3.JSX
+|     |  |- header1.JSX    // Code for header in the login page.
+|     |  |- header2.JSX    // Code for header in the signup page routes.
+|     |
+|     |- pages/
+|     |  |- firstpage.jsx  // Code for the first page.
+|     |  |- signup.jsx     // Code for signup page.
+|     |  |- transaction.jsx// Code for showing info about all the users.
+|     |  |- dashboard.jsx  // Code for the main dashboard.
+|     |  |- sendmoney.jsx  // Code for page where users can transact their capital.
+|     |
+|     |- App.jsx           // Code for routing system between various pages via React application.
 
-    />
+```
 
-
-
-<h6>
-  1.user can signup and search for other users to send money.<br>
-  2.user can tranfer money authenticatically.
-</h6>
