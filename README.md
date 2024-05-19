@@ -19,6 +19,7 @@ $ git clone https://github.com/ayanSCYY/paymentApp-
 
 - **Installation guide for running project.**
 ```
+$cd paymentApp-
 $cd backend
 $npm install
 $cd ..
